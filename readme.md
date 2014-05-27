@@ -1,5 +1,4 @@
-Simple Time Track
------------------
+# Simple Time Track
 
 Is Google Chrome extension based on jTrack (http://bulgaria-web-developers.com/projects/javascript/jtrack/)
 
