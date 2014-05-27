@@ -24,7 +24,7 @@ db.changeVersion('', '2.0', function (tx) {
 });
 
 // 1.0 => 2.0
-if (db.version === '1.0' || db.version === '1.1') {
+if (db.version == '1.0' || db.version == '1.1') {
 	db.changeVersion(db.version, '2.0', function (tx) {
 		tx.executeSql("ALTER TABLE tasks ADD project_name TEXT AFTER ID");
 	});
