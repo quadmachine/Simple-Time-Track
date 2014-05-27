@@ -10,7 +10,7 @@
  *
  */
 
-var db = openDatabase('timetrack_kast', '', 'Time track database', 2 * 1024 * 1024);
+var db = openDatabase('timetrack', '', 'Time track database', 2 * 1024 * 1024);
 
 // id - unique autoincrement identificator of task
 // project_name - project name or caption of the project
@@ -19,13 +19,13 @@ var db = openDatabase('timetrack_kast', '', 'Time track database', 2 * 1024 * 10
 // start - we need some guide for calculate time increase
 // running - task is in progress now
 
-db.changeVersion('', '1.1', function (tx) {
-	tx.executeSql('CREATE TABLE IF NOT EXISTS tasks(ID INTEGER PRIMARY KEY ASC, name TEXT, time INTEGER, start DATETIME, running BOOLEAN)', [], null, onError); // table creation
+db.changeVersion('', '2.0', function (tx) {
+	tx.executeSql('CREATE TABLE IF NOT EXISTS tasks(ID INTEGER PRIMARY KEY ASC, project_name TEXT, name TEXT, time INTEGER, start DATETIME, running BOOLEAN)', [], null, onError); // table creation
 });
 
-// 1.0 => 1.1
-if (db.version == '1.0') {
-	db.changeVersion(db.version, '1.1', function (tx) {
+// 1.0 => 2.0
+if (db.version === '1.0' || db.version === '1.1') {
+	db.changeVersion(db.version, '2.0', function (tx) {
 		tx.executeSql("ALTER TABLE tasks ADD project_name TEXT AFTER ID");
 	});
 }
