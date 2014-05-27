@@ -167,8 +167,7 @@ var taskInterface = {
 		// remove all tasks > confirm deletion
 		$("#button-remove-all").live("click", function () {
 			$("#form-remove-all").hide();
-
-			localStorage.removeItem("lastid"); // remove last id from local storage
+      tasks.removeall()
 		});
 
 		/* export all tasks
