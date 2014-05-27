@@ -1,0 +1,22 @@
+{
+	"name": "SimpleTimeTrack",
+	"version": "0.0.0",
+	"description": "Simple time tracking Extensions for Google Chrome",
+	"keywords": [
+		"chrome",
+		"extenstion",
+		"time",
+		"timetracking"
+	],
+	"author": "Roman Ožana <ozana@omdesign.cz>",
+	"license": "BSD-2-Clause",
+	"devDependencies": {
+		"gulp": "~3.6.2",
+		"gulp-coffee": "~1.4.3",
+		"gulp-util": "~2.2.14",
+		"gulp-less": "~1.2.3",
+		"gulp-concat": "~2.2.0",
+		"gulp-uglify": "^0.3.0",
+		"gulp-zip": "^0.3.4"
+	}
+}
