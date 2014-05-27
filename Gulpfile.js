@@ -5,17 +5,18 @@ var coffee = require("gulp-coffee"),
 		less = require("gulp-less"),
 		concat = require("gulp-concat"),
 		zip = require("gulp-zip");
+path = require('path');
 
 gulp.task("zip", function () {
 	return gulp.src([
-				'css/*',
-				'img/*',
-				'js/*',
-				'manifest.json',
-				'popup.html',
-				'timer128x128.png',
-				'timer32x32.png'
-			])
+		'css/*',
+		'img/*',
+		'js/*',
+		'manifest.json',
+		'popup.html',
+		'timer128x128.png',
+		'timer32x32.png'
+	], {base: "."})
 			.pipe(zip('simple_time_track.zip'))
 			.pipe(gulp.dest('dist'));
 });
