@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html data-ng-app="SimpleTimeTrackPopup" data-ng-csp>
+<head>
+    <meta charset="utf-8"/>
+    <title>Simple Time Tracking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+    <link rel="SHORTCUT ICON" type="image/ico" href="icons/icon32.png"/>
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./js/angular/angular-csp.css"/>
+</head>
+<body>
+
+<div ng-controller="PopupController" class="container" ng-class="controller">
+    <div ng-view></div>
+</div>
+
+<!--
+<script src="../../bower_components/angular/angular.js"></script>
+<script src="../../bower_components/angular-route/angular-route.js"></script>
+-->
+
+<script src="../../js/angular/angular.min.js"></script>
+<script src="../../js/angular/angular-route.min.js"></script>
+
+
+<script src="./app.js"></script>
+<script src="./data.js"></script>
+<script src="./controllers.js"></script>
+</body>
+</html>

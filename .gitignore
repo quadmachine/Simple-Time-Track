@@ -1,3 +1,4 @@
 .idea
-dist/simple_time_track.zip
-/node_modules
+dist/.zip
+node_modules
+bower_components

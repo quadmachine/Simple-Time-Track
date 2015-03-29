@@ -10,6 +10,7 @@
  *
  */
 
+
 var db = openDatabase('timetrack', '', 'Time track database', 2 * 1024 * 1024);
 
 // id - unique autoincrement identificator of task
@@ -158,7 +159,7 @@ var taskInterface = {
 		 ------------------------------------------------------------------------ */
 
 		// remove all tasks
-		$(".remove-all").live("click", function (e) {
+		$('#delete-all').live("click", function (e) {
 			e.preventDefault();
 			$(".form").hide();
 			$("#form-remove-all").slideDown();
@@ -167,14 +168,14 @@ var taskInterface = {
 		// remove all tasks > confirm deletion
 		$("#button-remove-all").live("click", function () {
 			$("#form-remove-all").hide();
-      tasks.removeall()
+			tasks.removeall()
 		});
 
 		/* export all tasks
 		 ------------------------------------------------------------------------ */
 
 		// export all tasks
-		$(".export-all").live("click", function (e) {
+		$("#export-all").live("click", function (e) {
 			db.transaction(function (tx) {
 				tx.executeSql('SELECT * FROM tasks ORDER BY id DESC', [], function (tx, results) {
 					var out = '';
@@ -266,7 +267,7 @@ var taskInterface = {
 			var id = $(this).attr("rel");
 
 			db.transaction(function (tx) {
-				tx.executeSql("UPDATE tasks SET time = ? WHERE id = ?", [0 , id], function (tx, results) {
+				tx.executeSql("UPDATE tasks SET time = ? WHERE id = ?", [0, id], function (tx, results) {
 					taskInterface.index();
 				}, onError);
 			});
