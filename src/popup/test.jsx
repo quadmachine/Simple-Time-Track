@@ -1,0 +1,7 @@
+React.createClass({
+
+	render: (
+			'<html>'
+	)
+
+});
