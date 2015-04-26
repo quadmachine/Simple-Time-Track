@@ -1,13 +1,17 @@
 # Simple Time Track
 
-Is Google Chrome extension based on jTrack (http://bulgaria-web-developers.com/projects/javascript/jtrack/)
+Simple Time Track is popup time tracking tools for Google Chrome. It's allow you tracking your time even when browser is off.
+  
+- simple interface (one icon with popup)
 
-- Special thanks to http://www.olawolska.com/ for great hand drawn icons!
+# Install from Google Chrome Store
 
-You can download extension from : https://chrome.google.com/webstore/detail/simple-time-track/hbhcgdpbdenjjpekdajanfgchlgacdea
+You can download latest version of extension from [https://chrome.google.com/webstore/detail/simple-time-track/hbhcgdpbdenjjpekdajanfgchlgacdea](Google Chrome Store).
 
-If you happy with my omBanner you can donate me some money. My PayPal account is ozana@omdesign.cz
+# Installing from Source
 
-Visit www.omdesign.cz or my blog www.nabito.net
-
-Roman Ožana, ozana@omdesign.cz
+- `git clone git@github.com:OzzyCzech/Simple-Time-Track.git` 
+- Visit chrome://extensions/
+- Ensure Developer mode is checked
+- Click Load unpacked extension...
+- Locate and select the `Simple-Time-Track` directory

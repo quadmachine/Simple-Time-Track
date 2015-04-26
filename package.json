@@ -11,14 +11,34 @@
   ],
   "author": "Roman Ožana <ozana@omdesign.cz>",
   "license": "BSD-2-Clause",
+  "dependencies": {
+    "bootstrap": "^3.3.4",
+    "flux": "^2.0.1",
+    "react": "^0.13.2",
+    "react-intl": "^1.2.0",
+    "react-router": "^0.13.2"
+  },
   "devDependencies": {
-    "gulp": "~3.6.2",
-    "gulp-coffee": "~1.4.3",
-    "gulp-util": "~2.2.14",
-    "gulp-less": "~1.2.3",
-    "gulp-concat": "~2.2.0",
-    "gulp-uglify": "^0.3.0",
-    "gulp-zip": "^0.3.4"
+    "babelify": "^6.0.2",
+    "browserify": "^9.0.8",
+    "envify": "^3.4.0",
+    "jest-cli": "~0.4.0",
+    "jshint": "~2.7.0",
+    "q": "~1.2.1",
+    "reactify": "^1.1.0",
+    "uglify-js": "~2.4.20",
+    "watchify": "^3.1.2"
+  },
+  "scripts": {
+    "watch": "watchify -o app.js -v -d src/popup/app.js",
+    "build": "browserify . -t [envify --NODE_ENV production] | uglifyjs -cm > js/bundle.min.js",
+    "package": "npm run jshint && npm run build && zip package-$(cat package.json | jq -r .version).zip -r build manifest.json"
+  },
+  "browserify": {
+    "transform": [
+      "reactify",
+      "envify"
+    ]
   },
   "repository": {
     "type": "git",

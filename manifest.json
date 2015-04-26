@@ -12,6 +12,6 @@
   "browser_action": {
     "default_title": "Simple Time Track",
     "default_icon": "icons/icon32.png",
-    "default_popup": "src/popup/index.html"
+    "default_popup": "html/popup.html"
   }
 }
