@@ -14,4 +14,4 @@ You can download latest version of extension from [https://chrome.google.com/web
 - Visit chrome://extensions/
 - Ensure Developer mode is checked
 - Click Load unpacked extension...
-- Locate and select the `Simple-Time-Track` directory
+- Locate and select the `Simple-Time-Track` directoryw

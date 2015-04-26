@@ -1,4 +1,4 @@
 .idea
 dist/.zip
 node_modules
-bower_components
+js/app.min.js

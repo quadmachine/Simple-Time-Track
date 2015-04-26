@@ -3,27 +3,26 @@ var webpack = require('webpack');
 
 module.exports = {
 	devtool: 'eval',
-	entry: "./js/app",
+	entry: ['webpack/hot/dev-server', "./js/app"],
 	output: {
-		path: path.join(__dirname, 'build'),
-		filename: "boundle.js",
+		path: path.join(__dirname, 'js'),
+		filename: "app.min.js",
 		publicPath: '/js/'
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NoErrorsPlugin()
+		new webpack.NoErrorsPlugin(),
+		new webpack.optimize.UglifyJsPlugin({sourceMap: false})
 	],
 	resolve: {
 		extensions: ['', '.js', '.jsx']
 	},
 	module: {
 		loaders: [
-			{
-				test: /\.jsx?$/,
-				exclude: /node_modules/,
-				loader: ['react-hot', 'babel'],
-				include: path.join(__dirname, 'js')
-			}
+			{test: /\.jsx?$/, exclude: /node_modules/, loaders: ['react-hot', 'babel'], include: path.join(__dirname, 'js')},
+			{test: /\.css$/, loader: "style!css"}
 		]
+	},
+	compress: {
+		warnings: false
 	}
 };

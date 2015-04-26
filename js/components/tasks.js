@@ -1,4 +1,4 @@
-import Header from 'header.react.js';
+import Header from './header.js';
 
 class Tasks extends React.Component {
 
