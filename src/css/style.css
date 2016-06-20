@@ -21,3 +21,8 @@ nav {
 nav .btn {
   border-radius: 0;
 }
+.confirm {
+  text-align: center;
+  font-size: 28px;
+  padding: 15px;
+}

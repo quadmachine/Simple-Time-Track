@@ -1,0 +1,13 @@
+<form class="form-horizontal" ng-submit="DeleteController.confirm()">
+
+	<div class="confirm" ng-show="all">
+		Are you sure you want to <strong>delete all tasks</strong>?
+	</div>
+
+	<div class="form-group">
+		<div class="col-xs-12 text-center">
+			<a type="reset" class="btn btn-default" href="#/">Cancel</a>
+			<button type="submit" class="btn btn-danger" ng-show="all">Yes, Delete All Tasks</button>
+		</div>
+	</div>
+</form>

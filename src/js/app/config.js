@@ -15,7 +15,13 @@ export function config($routeProvider) {
 						controllerAs: "AddController",
 						controller: "AddController"
 					})
-
+			.when(
+					"/delete/:what",
+					{
+						templateUrl: "partials/delete.html",
+						controllerAs: "DeleteController",
+						controller: "DeleteController"
+					})
 			.otherwise(
 					{redirectTo: "/"}
 			);
