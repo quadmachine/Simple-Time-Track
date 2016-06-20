@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html data-ng-app="SimpleTimeTrackApp" data-ng-csp>
+<head>
+	<meta charset="utf-8"/>
+	<title>Simple Time Tracking aplication</title>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+	<link rel="stylesheet" href="css/angular-csp.css"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="SHORTCUT ICON" type="image/ico" href="icons/timer32.png"/>
+</head>
+<body>
+
+<nav class="container-fluid">
+	<ul class="list-unstyled">
+		<li class="pull-left">
+			<div class="btn-group">
+				<a href="#/add" class="btn btn-primary">
+					<i class="glyphicon glyphicon-plus"></i> New task
+				</a>
+				<a href="#/delete" class="btn btn-danger">
+					<i class="glyphicon glyphicon-trash"></i> Delete All
+				</a>
+			</div>
+		</li>
+		<li class="pull-right">
+			<a href="#/export" class="btn btn-default">
+				<i class="glyphicon glyphicon-cloud-download"></i> Export
+			</a>
+		</li>
+	</ul>
+</nav>
+
+<div ng-controller="PopupController" class="container-fluid" ng-class="controller">
+	<div ng-view></div>
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>

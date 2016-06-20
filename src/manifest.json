@@ -1,0 +1,17 @@
+{
+  "name": "Simple Time Track",
+  "description": "Simple Time Track - how much time spend on tasks?",
+  "version": "2.6.4",
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+  "icons": {
+    "16": "icons/timer16.png",
+    "48": "icons/timer48.png",
+    "128": "icons/timer128.png"
+  },
+  "browser_action": {
+    "default_title": "Simple Time Track",
+    "default_icon": "icons/timer32.png",
+    "default_popup": "popup.html"
+  }
+}

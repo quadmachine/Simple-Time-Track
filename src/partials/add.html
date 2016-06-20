@@ -1,0 +1,36 @@
+<form class="form-horizontal" ng-submit="AddController.add()">
+	<div class="form-group">
+		<label for="add-project-name" class="col-xs-3 control-label">Project name</label>
+		<div class="col-xs-9">
+			<input
+				ng-model="add.project"
+				type="text"
+				name="add-task-project-name"
+				id="add-project-name"
+				class="form-control"
+				placeholder="Project name"
+				autocomplete="off"
+			/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="add-task-name" class="col-xs-3 control-label">Task name</label>
+		<div class="col-xs-9">
+			<input
+				ng-model="add.name"
+				type="text"
+				name="add-task-project-name"
+				id="add-task-name"
+				class="form-control"
+				placeholder="Task name"
+				autocomplete="off"
+			/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-xs-12 text-right">
+			<a type="reset" class="btn btn-default" href="#/">Cancel</a>
+			<button type="submit" class="btn btn-primary">Add Task</button>
+		</div>
+	</div>
+</form>

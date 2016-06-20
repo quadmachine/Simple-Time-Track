@@ -167,7 +167,7 @@ var taskInterface = {
 		// remove all tasks > confirm deletion
 		$("#button-remove-all").live("click", function () {
 			$("#form-remove-all").hide();
-      tasks.removeall()
+			tasks.removeall()
 		});
 
 		/* export all tasks
@@ -266,7 +266,7 @@ var taskInterface = {
 			var id = $(this).attr("rel");
 
 			db.transaction(function (tx) {
-				tx.executeSql("UPDATE tasks SET time = ? WHERE id = ?", [0 , id], function (tx, results) {
+				tx.executeSql("UPDATE tasks SET time = ? WHERE id = ?", [0, id], function (tx, results) {
 					taskInterface.index();
 				}, onError);
 			});
