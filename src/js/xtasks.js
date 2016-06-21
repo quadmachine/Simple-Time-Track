@@ -1,16 +1,5 @@
-/* 
- * Copyright (c) 2010 Roman Ožana. All rights reserved.
- * @author Roman Ožana <ozana@omdesign.cz>
- * @link www.omdesign.cz
- * @license MIT
- * @version 3.12.2010
- *
- * Special thanks to jTrack for inspiration !
- * http://bulgaria-web-developers.com/projects/javascript/jtrack/
- *
- */
 
-var db = openDatabase('timetrack', '', 'Time track database', 2 * 1024 * 1024);
+var db = openDatabase('timetrack', '', 'Time track database', 5 * 1024 * 1024);
 
 // id - unique autoincrement identificator of task
 // project_name - project name or caption of the project
@@ -19,35 +8,9 @@ var db = openDatabase('timetrack', '', 'Time track database', 2 * 1024 * 1024);
 // start - we need some guide for calculate time increase
 // running - task is in progress now
 
-db.changeVersion('', '2.0', function (tx) {
-	tx.executeSql('CREATE TABLE IF NOT EXISTS tasks(ID INTEGER PRIMARY KEY ASC, project_name TEXT, name TEXT, time INTEGER, start DATETIME, running BOOLEAN)', [], null, onError); // table creation
-});
 
-// 1.0 => 2.0
-if (db.version == '1.0' || db.version == '1.1') {
-	db.changeVersion(db.version, '2.0', function (tx) {
-		tx.executeSql("ALTER TABLE tasks ADD project_name TEXT AFTER ID");
-	});
-}
 
-/**
- * Delete all records (drop table)
- */
-function dropTaskTable() {
-	db.transaction(function (tx) {
-		tx.executeSql("DROP TABLE tasks", [], function (tx, results) {
-			alert('Table tasks was droped');
-		}, onError);
-	});
-}
-// dropTaskTable();
 
-/**
- * Exception hook
- */
-function onError(tx, error) {
-	alert(error.message);
-}
 
 var tasks = {
 
@@ -88,8 +51,6 @@ var tasks = {
 			}, onError);
 		});
 	}
-
-
 }
 
 

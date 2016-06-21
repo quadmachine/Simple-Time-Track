@@ -1,12 +1,12 @@
-<form class="form-horizontal" ng-submit="AddController.add()">
+<form class="form-horizontal" ng-submit="AddController.addTask()">
 	<div class="form-group">
-		<label for="add-project-name" class="col-xs-3 control-label">Project name</label>
+		<label for="add-project" class="col-xs-3 control-label">Project name</label>
 		<div class="col-xs-9">
 			<input
-				ng-model="add.project"
+				ng-model="project"
 				type="text"
-				name="add-task-project-name"
-				id="add-project-name"
+				name="add-project"
+				id="add-project"
 				class="form-control"
 				placeholder="Project name"
 				autocomplete="off"
@@ -14,13 +14,13 @@
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="add-task-name" class="col-xs-3 control-label">Task name</label>
+		<label for="add-task" class="col-xs-3 control-label">Task name</label>
 		<div class="col-xs-9">
 			<input
-				ng-model="add.name"
+				ng-model="task"
 				type="text"
-				name="add-task-project-name"
-				id="add-task-name"
+				name="add-task"
+				id="add-task"
 				class="form-control"
 				placeholder="Task name"
 				autocomplete="off"
