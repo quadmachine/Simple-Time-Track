@@ -197,16 +197,10 @@ var taskInterface = {
 						out = "No tasks"
 					}
 
-					/**
-					 * @todo the file is now downloading as 'download' without the file extension
-					 *       need to make it somehow download as 'simple_time_track.csv'. below code
-					 *       supposed to work, but it is not working
-					 var link = document.createElement("a");
-					 link.setAttribute("download", "simple_time_track.csv");
-					 link.setAttribute("href", 'data:text/csv;charset=utf-8,' + encodeURIComponent(out));
-					 link.click(); // This will download the data file named "my_data.csv"
-					 */
-					window.open('data:text/csv;charset=utf-8,' + encodeURIComponent(out));
+					var link = document.createElement("a");
+					link.download = 'SimpleTimeTrack - '  +new Date(Date.now()).toLocaleString()  + '.csv';
+					link.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(out);
+					link.click();
 
 				}, null);
 			});
