@@ -1,17 +1,31 @@
 @CHARSET "UTF-8";
 html {  width: 400px; height: auto; }
-body{ font-family: Arial, Tahoma, sans-serif; font-size: 11px; padding:0; margin:0 auto;background: #fff;overflow: scroll;}
+body{ font-family: Helvetica, Tahoma, sans-serif; font-size: 11px; padding:0; margin:0 auto;background: #fff;overflow: scroll;}
 a {text-decoration: none;color:#555;}
 
 /* top bar
 ----------------------------------------------------------------------------- */
 
-#bar {	padding:0.8em 1em; overflow:auto; background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(100%,#efefef)); border-bottom: 1px solid #e0e0e0;}
+#bar {
+  padding:0.8em 1em;
+  overflow:auto;
+  background: #f6f6f6;
+  border-bottom: 1px solid #e0e0e0;
+}
+
 #bar .remove-all {float:right!important;}
 #bar .create {float:left!important;}
-#bar .export-all {float:left!important; margin-left:10px;}
-#bar .remove-all span {background: transparent url(../img/delete.png) 50% 50% no-repeat; display:block; width: 20px; height:28px; float:left; margin: 0 10px 0 0;}
-#bar .create span {background: transparent url(../img/new.png) 50% 50% no-repeat; display:block; width: 16px; height:28px; float:left; margin: 0 10px 0 0;}
+#bar .export-all {float:left!important;
+  margin-left:10px;}
+#bar .remove-all span {background: transparent url(../img/delete.png) 50% 50% no-repeat;
+  display:block;
+width: 20px;
+height:28px;
+float:left;
+margin: 0 10px 0 0;}
+#bar .create span {background: transparent url(../img/new.png) 50% 50% no-repeat;
+  display:block;
+width: 16px; height:28px; float:left; margin: 0 10px 0 0;}
 
 /* buttons
 ----------------------------------------------------------------------------- */
@@ -20,9 +34,8 @@ input[type=button],
 input[type=submit],
 #bar a.button {color:#444;text-decoration: none;display: block; padding:0 17px;font-weight: bold; line-height: 28px;
                border-radius:3px;
-               background: #ffffff;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#EAEAEA));
-               border: 1px solid #eee;
-               box-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+               background-color: #fff;
+               border-radius: 2px;
                float:left;
                border:1px solid #ddd;
                position: relative;
@@ -45,7 +58,16 @@ input[type=text] {	border: solid 1px #D6D6BE;	background-color: #fcfff4;	padding
 input[type=text]:focus {	border: solid 1px #fff286;	background-color: #fff;}
 
 .form {overflow-y: auto;}
-.form label {	display: block;	font-weight: bold;text-align: left; font-size: 16px;}
+
+.form label {
+  width: calc(100% - 120px);
+  padding-right: 120px; /* prevent timer clipping task name */
+  display: block;
+  font-weight: bold;
+  text-align: left;
+  font-size: 16px;
+}
+
 .form label small { font-size: 10px !important;}
 
 
@@ -58,11 +80,42 @@ input[type=text]:focus {	border: solid 1px #fff286;	background-color: #fff;}
 /* item
 ----------------------------------------------------------------------------- */
 
-.item {text-align: left;border-bottom: solid 1px #ccc; padding: 14px 12px!important; position: relative; background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(100%,#efefef)); display:block; overflow:hidden;}
-.item a.power {background: url(../img/play.png) 0 0 no-repeat; 	display: block; position: absolute;	right: 3px; width: 32px;height: 32px; bottom: 14px;right: 10px;}
-.item a.running {background: url(../img/pause.png) 0 0 no-repeat;}
-.item span.timer{	position: absolute;	right: 50px;	top: 23px; font-size: 17px;}
-p.running {background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcfff4), color-stop(100%,#e9e9ce));}
+.item {
+  text-align: left;
+  border-bottom: solid 1px #eee;
+  padding: 14px 12px!important;
+  position: relative;
+  background: #fff;
+  display:block;
+  overflow:hidden;
+}
+
+.item a.power {
+  right: 3px;
+  width: 72px;
+  padding-right: 16px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: url(../img/play.png) right center no-repeat;
+  background-origin: content-box;
+}
+
+.item a.running {
+  background-image: url(../img/pause.png);
+}
+.item span.timer{
+  position: absolute;
+  right: 50px;
+  top: 28px;
+  font-size: 17px;
+}
+
+p.running {
+  background-color: #eaffd6;
+}
 
 /* other elements
 ----------------------------------------------------------------------------- */
@@ -79,6 +132,17 @@ p.remove-confirm strong {color:#333;}
 /* footer
 ----------------------------------------------------------------------------- */
 
-#footer {background:#fefefe;color:#bbb;margin:0; padding:5px; border-top: 1px solid #eee;}
-#footer a {color:#bbb;}
-#footer a:hover {color:#333;}
+#footer {
+  background:#f6f6f6;
+  color:#bbb;
+  margin:0;
+  padding:5px;
+}
+
+#footer a {
+  color:#bbb;
+}
+
+#footer a:hover {
+  color:#333;
+}
